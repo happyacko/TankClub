@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tank Club Army Builder</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Tank Club Army Builder</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Filters</h2>
+      <label>Point Limit:
+        <input type="number" id="pointLimit" value="100" min="0">
+      </label><br/>
+      <label>Nation:
+        <select id="nationFilter">
+          <option value="">All</option>
+        </select>
+      </label>
+    </section>
+
+    <section>
+      <h2>Available Units</h2>
+      <ul id="unitList"></ul>
+    </section>
+
+    <section id="army-list">
+      <h2>Your Army (<span id="totalPoints">0</span> pts)</h2>
+      <ul id="selectedUnits"></ul>
+      <button onclick="saveArmy()">💾 Save Army</button>
+      <button onclick="loadArmy()">📂 Load Army</button>
+      <button onclick="exportArmyPDF()">🧾 Export to PDF</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
